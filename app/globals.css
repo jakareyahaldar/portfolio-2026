@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-caveat: var(--font-caveat);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +24,26 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.spinner{
+  animation: animate_spinner 4s infinite linear;
+}
+.spinner_rev{
+  animation: animate_spinner_rev 4s infinite linear;
+}
+
+@keyframes animate_spinner {
+  0%{
+    transform: rotate(0deg);
+  }100%{
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate_spinner_rev {
+  0%{
+    transform: rotate(360deg);
+  }100%{
+    transform: rotate(0deg);
+  }
 }
