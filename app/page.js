@@ -5,7 +5,6 @@ import TechStack from "./_sections/TechStack";
 import MyProjects from "./_sections/MyProjects";
 import ContactMe from "./_sections/ContactMe";
 import Footer from "./_sections/Footer";
-import ScrollReveal from "./_components/ScrollReveal";
 
 export default function Home() {
 
@@ -14,7 +13,6 @@ export default function Home() {
 
   return (
     <main>
-      <ScrollReveal />
       <HeroSection />
       <AboutMe />
       <TechStack />
