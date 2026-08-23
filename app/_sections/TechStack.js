@@ -36,7 +36,7 @@ const databasees_storage_config = [
 ]
 
 export default function TechStack() {
-  return (
+return (
     <section id="tech_stack" className="md:px-20 px-5 relative py-20 h-auto min-h-dvh">
         <SectionStart text={"Tech Stack"} />
         <div className="grid md:grid-cols-2 md:gap-40 md:px-30">
@@ -44,7 +44,6 @@ export default function TechStack() {
             <TechCard title={"Frontend"} items={frontend_config} />
             <TechCard title={"Backend & APIs"} items={backend_api_config} />
             <TechCard title={"Databases & Storage"} items={databasees_storage_config} />
-              {/*<TechCard title={"State & Events"} /> */}
         </div> 
         <SectionEnd text={"Tech Stack"} />
     </section>

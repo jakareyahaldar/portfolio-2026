@@ -19,8 +19,8 @@ export default function MouseEffect() {
 
   return (
     <div
-  id="pointer"
-  className="h-10 w-10 rounded-full fixed z-[9999] opacity-0 pointer-events-none shadow-[0_0_25px_8px_rgba(37,99,235,0.7)]"
-/>
+      id="pointer"
+      className="h-10 w-10 rounded-full fixed z-[9999] opacity-0 pointer-events-none shadow-[0_0_25px_8px_rgba(37,99,235,0.7)]"
+    />
   )
 }

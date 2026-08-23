@@ -15,18 +15,19 @@ const social_links = [
   { name: "Github", 
     link: "https://github.com/jakareyahaldar",
     icon: faGithub, 
-    css: "top-1/2 left-100" 
+    css: "top-1/2 left-full" 
   },
   { name: "Whatsapp", 
     link: "",
     icon: faWhatsapp, 
-    css: "top-100 left-1/2" 
+    css: "top-full left-1/2" 
   }
 ]
 
 export default function Social() {
   return (
-    <div className="h-[400] w-[400] border border-dashed rounded-full relative mt-12">
+    <div className="anim md:h-[400] md:w-[400] h-[300] w-[300] border border-dashed rounded-full relative mt-12">
+      
       {
         social_links.map(({name, icon, css, link})=>{
           return(

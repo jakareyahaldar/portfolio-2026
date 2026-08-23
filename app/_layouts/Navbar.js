@@ -27,7 +27,7 @@ export default function Navbar() {
             </nav>
             <div className="flex gap-5 items-center">
                 <DayLightToggler />
-                <button className="flex gap-2 px-3 py-1 border-2 border-blue-700 rounded-md">Resume <Download /></button>
+                <button className="flex gap-1 px-2 py-1 border border-blue-700 rounded-md">Resume <Download /></button>
             </div>
         </div>
     </header>

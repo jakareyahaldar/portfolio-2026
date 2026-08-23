@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1106 188" width="1106" height="188">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b97858"/>
+      <stop offset="0.42" stop-color="#b9954f"/>
+      <stop offset="0.72" stop-color="#aaa64d"/>
+      <stop offset="1" stop-color="#a9c55b"/>
+    </linearGradient>
+
+    <linearGradient id="wave1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d7a98c" stop-opacity=".72"/>
+      <stop offset=".48" stop-color="#b7a55d" stop-opacity=".58"/>
+      <stop offset="1" stop-color="#b4ce79" stop-opacity=".62"/>
+    </linearGradient>
+
+    <linearGradient id="wave2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9d684c" stop-opacity=".62"/>
+      <stop offset=".45" stop-color="#ad914c" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#9bb94f" stop-opacity=".52"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main lower gradient area -->
+  <path fill="url(#base)" d="
+    M0 58
+    C150 18 290 32 430 67
+    C565 100 650 64 760 38
+    C890 7 1015 37 1106 69
+    L1106 188
+    L0 188 Z"/>
+
+  <!-- Light upper flowing wave -->
+  <path fill="url(#wave1)" d="
+    M0 57
+    C150 18 285 30 425 64
+    C565 98 655 62 760 37
+    C890 7 1015 37 1106 68
+    L1106 96
+    C970 48 850 35 735 57
+    C610 80 535 121 400 105
+    C245 87 145 61 0 92 Z"/>
+
+  <!-- Darker crossing wave -->
+  <path fill="url(#wave2)" d="
+    M0 73
+    C125 116 225 139 350 108
+    C475 77 570 39 695 42
+    C825 45 935 76 1106 49
+    L1106 188
+    L0 188 Z"/>
+
+  <!-- Subtle foreground wave -->
+  <path fill="#8f624d" opacity=".22" d="
+    M0 137
+    C135 126 260 145 390 135
+    C535 124 620 87 750 83
+    C890 79 1000 106 1106 91
+    L1106 188
+    L0 188 Z"/>
+</svg>

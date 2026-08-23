@@ -5,7 +5,11 @@ import { Fredoka } from "next/font/google";
 
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 config.autoAddCss = false
+
+gsap.registerPlugin(ScrollTrigger);
 
 const fredoka = Fredoka({
   subsets: ["latin"],
