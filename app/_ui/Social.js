@@ -26,7 +26,7 @@ const social_links = [
 
 export default function Social() {
   return (
-    <div className="anim md:h-[400] md:w-[400] h-[300] w-[300] border border-dashed rounded-full relative mt-12">
+    <div className=" md:h-[400] md:w-[400] h-[300] w-[300] border border-dashed rounded-full relative mt-12">
       
       {
         social_links.map(({name, icon, css, link})=>{

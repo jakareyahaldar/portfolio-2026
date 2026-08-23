@@ -15,7 +15,7 @@ export default function ProjectCard() {
                 <h3 className="md:text-2xl text-xl">Galaxy</h3>
            </div>
            <div className="flex gap-5 items-center">
-                <div className="flex items-center gap-2 uppercase animate-bounce text-amber-300">
+                <div className="flex items-center gap-2 uppercase ate-bounce text-amber-300">
                     <div className="w-3 h-3 bg-blue-700 rounded-full"></div>
                     Live
                 </div>

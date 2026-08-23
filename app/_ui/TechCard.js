@@ -12,7 +12,7 @@ export default function TechCard({title,items}) {
             {
                 items.map((item)=>{
                     return(
-                        <div key={item.title} className="anim flex flex-col justify-center items-center gap-5 hover:scale-110 transition">
+                        <div key={item.title} className=" flex flex-col justify-center items-center gap-5 hover:scale-110 transition">
                             <Image className="w-[30] md:w-[50]" src={item.image} height={50} width={50} alt="Html" />
                             <p>{item.title}</p>
                         </div>
