@@ -9,7 +9,7 @@ export default function AboutMe() {
         <SectionStart text={"About Me"} />
         <div className="flex justify-center items-center md:flex-row flex-col md:gap-20 md:mt-72 md:px-50 py-10" >
             <div className="">
-                <Image className="md:w-[500] w-[200] rounded-full" src="/jakareya_ai.png" alt="Jakareya" height={300} width={300} />
+                <Image className="md:w-[800] w-[200] rounded-full" src="/about.png" alt="Jakareya" height={300} width={300} />
             </div>
             <div className=" flex gap-7">
                 <div className="h-[calc(100%+10)] w-1 rounded-2xl bg-blue-700 shrink-0 md:block hidden"></div>

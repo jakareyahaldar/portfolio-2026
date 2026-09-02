@@ -7,7 +7,7 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ScrollSmooth from "@/lib/ScrollSmoother";
+import PathChangeAnimation from "./_layouts/PathChangeAnimation";
 config.autoAddCss = false
 
 gsap.registerPlugin(ScrollTrigger);
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
     <html className="scroll-smooth" lang="en">
       <body  className={`${fredoka.className} `}>
         <div>
-          <ScrollSmooth />
+          <PathChangeAnimation />
           <Navbar />
           <MouseEffect />
           {children}

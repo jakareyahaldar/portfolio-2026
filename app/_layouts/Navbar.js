@@ -9,10 +9,11 @@ const caveat = Caveat({
 });
 
 const links_config = [
-    {href: "#about", title: "About"},
-    {href: "#tech_stack", title: "Skills"},
-    {href: "#projects", title: "Projects"},
-    {href: "#contact", title: "Contact"},
+    {href: "/", title: "Home"},
+    {href: "/about", title: "About"},
+    {href: "/tech-stack", title: "Skills"},
+    {href: "/projects", title: "Projects"},
+    {href: "/contact", title: "Contact"},
 ]
 
 export default function Navbar() {

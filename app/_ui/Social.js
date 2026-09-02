@@ -1,5 +1,6 @@
 import { faFacebook, faGithub, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 
 const social_links = [
   { name: "Facebook", 
@@ -26,7 +27,11 @@ const social_links = [
 
 export default function Social() {
   return (
-    <div className=" md:h-[400] md:w-[400] h-[200] w-[200] border border-dashed rounded-full relative mt-12">
+    <div className=" md:h-[400] md:w-[400] h-[200] w-[200] border border-dashed rounded-full relative mt-12 ">
+
+      <div className="h-full w-full rounded-full overflow-hidden">
+        <Image height={500} width={500} alt="contact_image" className="w-full h-full object-cover" src="/contact.png" />
+      </div>
       
       {
         social_links.map(({name, icon, css, link})=>{
