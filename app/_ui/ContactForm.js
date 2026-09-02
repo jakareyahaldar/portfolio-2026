@@ -2,7 +2,7 @@ import { Send } from "lucide-react";
 
 export default function ContactForm() {
   return (
-    <form className=" md:w-[600] w-full text-lg bg-blue-950/40 p-5 rounded-2xl">
+    <form className=" md:w-[600] w-full text-lg bg-blue-950/40 p-5 rounded-2xl" >
         <div className="grid gap-2 ">
             <label>Name</label>
             <input className="px-2 py-1 rounded-md bg-black" type="name" placeholder="Enter your Name: " name="name" />

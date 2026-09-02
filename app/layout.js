@@ -7,6 +7,7 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollSmooth from "@/lib/ScrollSmoother";
 config.autoAddCss = false
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,11 +19,14 @@ const fredoka = Fredoka({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${fredoka.className} w-dvw`}>
-        <Navbar />
-        <MouseEffect />
-        {children}
+    <html className="scroll-smooth" lang="en">
+      <body  className={`${fredoka.className} `}>
+        <div>
+          <ScrollSmooth />
+          <Navbar />
+          <MouseEffect />
+          {children}
+        </div>
       </body>
     </html>
   );

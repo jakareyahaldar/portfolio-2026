@@ -12,7 +12,7 @@ export default function Home() {
 
 
   return (
-    <main>
+    <main id="smooth-content">
       <HeroSection />
       <AboutMe />
       <TechStack />

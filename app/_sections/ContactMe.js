@@ -10,7 +10,7 @@ export default function ContactMe() {
           <h2 className=" text-5xl font-semibold text-blue-600">Let's collaborate!</h2>
           <p className=" text-2xl">Contact me to discuss your web development needs <br/> or just to say hello. 😉</p>
         </div>
-        <div className="grid justify-center gap-20 md:gap-0 md:grid-cols-2 md:px-80 my-20">
+        <div className="flex flex-col items-center gap-20 px-5 md:flex-row md:gap-60 md:justify-center ">
           <Social />
           <ContactForm />
         </div>
