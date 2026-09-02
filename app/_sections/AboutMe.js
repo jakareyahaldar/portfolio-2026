@@ -5,9 +5,9 @@ import SectionEnd from "../_ui/SectionEnd";
 
 export default function AboutMe() {
   return (
-    <section id="about" className="h-auto min-h-dvh w-full md:px-20 px-5 pb-20 relative">
+    <section id="about" className="h-auto min-h-dvh w-full  px-5 pb-20 relative">
         <SectionStart text={"About Me"} />
-        <div className="flex justify-center items-center md:flex-row flex-col md:gap-20 md:mt-72 md:px-50 py-10" >
+        <div className="flex justify-center items-center md:flex-row flex-col md:gap-20 md:mt-72 md:px-10 py-10" >
             <div className="">
                 <Image className="md:w-[800] w-[200] rounded-full" src="/about.png" alt="Jakareya" height={300} width={300} />
             </div>
