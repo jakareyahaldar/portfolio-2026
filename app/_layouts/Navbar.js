@@ -24,8 +24,10 @@ export default function Navbar() {
 
     const [ open, setOpen ] = useState(false)
     const path = usePathname()
+    const isDesktop = window?.innerWidth > 400 
 
     function toggle(){
+        if (isDesktop) return
         setOpen(!open)
     }
 
@@ -33,9 +35,9 @@ export default function Navbar() {
     <header className="fixed w-dvw backdrop-blur-xl z-[99]">
         <div className="flex  w-dvw justify-between items-center md:px-20 px-5 py-5">
             <Link className={`${caveat.className} md:text-4xl text-2xl text-blue-600 font-bold`} href="/"><span>Portfolio</span></Link>
-            <nav className={`md:flex md:flex-row md:static gap-5 ${ !!open ? "fixed top-0 left-0 flex flex-col justify-center items-center bg-blue-950 text-white h-dvh w-dvw":"hidden"}`}>
+            <nav className={`md:flex md:flex-row md:static gap-5 ${ open ? "fixed top-0 left-0 flex flex-col justify-center items-center bg-blue-950 text-white h-dvh w-dvw":"hidden"}`}>
                 
-                <DoorClosedIcon onClick={toggle} className=" absolute top-10 right-10" />
+                <DoorClosedIcon onClick={toggle} className=" absolute top-10 right-10 md:hidden " />
                 {
                     links_config?.map( (item) => {
                      return <Link onClick={toggle} className={`${ path === item.href ? "bg-blue-600 text-white":"" } uppercase px-2 py-1  hover:text-amber-300 transition`} key={item?.title} href={item?.href}>{item?.title}</Link>
