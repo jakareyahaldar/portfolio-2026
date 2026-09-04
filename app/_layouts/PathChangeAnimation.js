@@ -49,11 +49,11 @@ export default function PathChangeAnimation() {
             ref={container}
             className="grid grid-cols-5 h-dvh w-dvw fixed top-0 left-0 z-[200]"
         >
-            <div className="staire bg-amber-100 h-full" />
+            <div className="staire bg-white h-full" />
             <div className="staire bg-black h-full" />
-            <div className="staire bg-amber-100 h-full" />
+            <div className="staire bg-white h-full" />
             <div className="staire bg-black h-full" />
-            <div className="staire bg-amber-100 h-full" />
+            <div className="staire bg-white h-full" />
         </div>
     )
 }

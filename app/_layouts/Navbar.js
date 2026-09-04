@@ -5,7 +5,7 @@ import DayLightToggler from "../_ui/DayLightToggler";
 import { DoorClosedIcon, Download, MenuIcon } from "lucide-react";
 import { Caveat } from "next/font/google";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const caveat = Caveat({
   subsets: ["latin"],
