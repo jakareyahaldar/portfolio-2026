@@ -58,16 +58,32 @@ export default function page() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log({
-      ...form,
-      logo,
-      preview,
-    });
+
+    const formData = new FormData()
+    formData.append("title", form.title)
+    formData.append("description", form.description)
+    formData.append("liveUrl", form.liveUrl)
+    formData.append("githubUrl", form.githubUrl)
+    formData.append("logo", logo)
+    formData.append("title", preview)
 
     // Send data to your API here
+    try{
+      const req = await fetch("/api/project",{
+        method: "POST",
+        body: formData
+      })
+      if(req.ok){
+        alert("project added success!")
+      }else{
+        alert("faild to add project!")
+      }
+    }catch(err){
+      console.log(err.message)
+    }
   };
 
   return (
