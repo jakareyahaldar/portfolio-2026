@@ -1,17 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import {
-  ArrowLeft,
-  Globe,
-  ImagePlus,
-  Link as LinkIcon,
-  Save,
-  Upload,
-  X,
-} from "lucide-react";
+import { ArrowLeft, Globe, ImagePlus, Link as LinkIcon, Save, Upload, X} from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { CldUploadButton } from "next-cloudinary";
+
 
 export default function page() {
   const [logo, setLogo] = useState(null);
@@ -67,23 +61,28 @@ export default function page() {
     formData.append("description", form.description)
     formData.append("liveUrl", form.liveUrl)
     formData.append("githubUrl", form.githubUrl)
-    formData.append("logo", logo)
-    formData.append("title", preview)
+    formData.append("logo", logo.file)
+    formData.append("title", preview.file)
+
+
+    for (e of formData.entries()){
+      console.log(e)
+    }
 
     // Send data to your API here
-    try{
-      const req = await fetch("/api/project",{
-        method: "POST",
-        body: formData
-      })
-      if(req.ok){
-        alert("project added success!")
-      }else{
-        alert("faild to add project!")
-      }
-    }catch(err){
-      console.log(err.message)
-    }
+    // try{
+    //   const req = await fetch("/api/project",{
+    //     method: "POST",
+    //     body: formData
+    //   })
+    //   if(req.ok){
+    //     alert("project added success!")
+    //   }else{
+    //     alert("faild to add project!")
+    //   }
+    // }catch(err){
+    //   console.log(err.message)
+    // }
   };
 
   return (
@@ -168,39 +167,41 @@ export default function page() {
               </div>
             </section>
 
-            {/* Images */}
-            <section className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900">
-              <div className="mb-6">
-                <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  Project Images
-                </h2>
+            <section>
+              <CldUploadButton uploadPreset="project-images"
+              onSuccess={(result, { widget }) => {
+                  console.log('Upload successful:', result);
+                  widget.close();
+              }}
+              onError={(error, { widget }) => {
+                console.error('Upload error:', error);
+              }}
+              >
+                Upload Files
+              </CldUploadButton>
+            </section>
 
-                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                  Upload a project logo and preview image.
-                </p>
-              </div>
-
-              <div className="grid gap-6 md:grid-cols-2">
-                {/* Logo */}
-                <ImageUpload
-                  label="Project Logo"
-                  description="PNG, JPG or SVG"
-                  image={logo}
-                  onChange={(e) => handleImageChange(e, "logo")}
-                  onRemove={() => removeImage("logo")}
-                  icon={<ImagePlus size={24} />}
-                  compact
-                />
-
-                {/* Preview */}
-                <ImageUpload
-                  label="Project Preview"
-                  description="Recommended: 1200 × 800px"
-                  image={preview}
-                  onChange={(e) => handleImageChange(e, "preview")}
-                  onRemove={() => removeImage("preview")}
-                  icon={<Upload size={24} />}
-                />
+            {/* MY IMAGE UPLOAD SECTION */}
+            <section className=" shadow-md rounded-2xl border border-gray-200 p-5">
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-400">Project Images</h4>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Upload a project logo and preview image.</p>
+              <div className="grid grid-cols-2 gap-10 mt-8">
+                <div>
+                  <p className="text-sm font-medium my-2">Project Logo</p>
+                  <CldUploadButton className="w-full h-50 border-2 border-dashed border-gray-300 hover:border-gray-400 bg-gray-100 hover:bg-gray-300 transition duration-500 rounded-2xl flex justify-center items-center flex-col" uploadPreset="project-images">
+                    <div className="h-12 w-12 flex justify-center items-center border text-gray-500 border-gray-400 rounded-xl"><ImagePlus /></div>
+                    <h4 className="text-xs font-medium mt-3">Click to upload</h4>
+                    <p className="text-xs text-gray-400">PNG, JPG or SVG</p>
+                  </CldUploadButton>
+                </div>
+                <div>
+                  <p className="text-sm font-medium my-2">Project Preview</p>
+                  <CldUploadButton className="w-full h-50 border-2 border-dashed border-gray-300 hover:border-gray-400 bg-gray-100 hover:bg-gray-300 transition duration-500 rounded-2xl flex justify-center items-center flex-col" uploadPreset="project-images">
+                    <div className="h-12 w-12 flex justify-center items-center border text-gray-500 border-gray-400 rounded-xl"><ImagePlus /></div>
+                    <h4 className="text-xs font-medium mt-3">Click to upload</h4>
+                    <p className="text-xs text-gray-400">PNG, JPG or SVG</p>
+                  </CldUploadButton>
+                </div>
               </div>
             </section>
 
@@ -287,67 +288,3 @@ export default function page() {
   );
 }
 
-function ImageUpload({
-  label,
-  description,
-  image,
-  onChange,
-  onRemove,
-  icon,
-  compact = false,
-}) {
-  return (
-    <div>
-      <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
-        {label}
-      </label>
-
-      {image ? (
-        <div
-          className={`relative overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800 ${
-            compact ? "h-48" : "h-64"
-          }`}
-        >
-          <img
-            src={image.url}
-            alt={label}
-            className="h-full w-full object-cover"
-          />
-
-          <button
-            type="button"
-            onClick={onRemove}
-            className="absolute right-3 top-3 rounded-lg bg-black/70 p-2 text-white backdrop-blur transition hover:bg-black"
-          >
-            <X size={18} />
-          </button>
-        </div>
-      ) : (
-        <label
-          className={`flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 transition hover:border-gray-400 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-950 dark:hover:border-gray-600 ${
-            compact ? "h-48" : "h-64"
-          }`}
-        >
-          <div className="mb-3 rounded-xl bg-white p-3 text-gray-500 shadow-sm dark:bg-gray-900 dark:text-gray-400">
-            {icon}
-          </div>
-
-          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-            Click to upload
-          </span>
-
-          <span className="mt-1 text-xs text-gray-400">
-            {description}
-          </span>
-
-          <input
-            type="file"
-            accept="image/png,image/jpeg,image/webp,image/svg+xml"
-            onChange={onChange}
-            className="hidden"
-          />
-        </label>
-      )}
-    </div>
-  );
-}
