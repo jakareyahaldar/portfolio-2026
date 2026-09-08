@@ -14,3 +14,15 @@ export const POST = async (Request)=>{
         return Response.json({error:err.message}, {status: 404})
     }
 }
+
+export const GET = async ()=>{
+    await connectDb()
+    try{
+        console.log(">>>>>>>>>")
+        const projects = await ProjectModel.find()
+        return Response.json(projects,{ status: 200 })
+    }catch(err){
+        console.log(error)
+         return Response.json({error: "server error"},{ status: 500 })
+    }
+}

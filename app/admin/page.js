@@ -1,9 +1,17 @@
+import { Brain, Delete, Edit, Sticker, Workflow } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
-export default function page() {
+export default async function page() {
+  
+
+
   return (
-    <section className="pt-20">
-        <Link href="/admin/add-project" >Add Project</Link>
+    <section>
+      Dashboard
     </section>
   )
 }
+
+
+
