@@ -18,7 +18,7 @@ export default function layout({ children }) {
             <div className="p-5 h-auto min-h-dvh">
                 {navigation_config.map((item)=>{
                     return(
-                        <Link className={`${ path.includes(item.href) ? "bg-gray-400" : "" } flex items-center gap-2 hover:bg-gray-400 transition duration-700 rounded-md py-2 px-3 mb-3`} href={item.href} > {item.icon} {item.text} </Link>
+                        <Link key={item.text} className={`${ path.includes(item.href) ? "bg-gray-400" : "" } flex items-center gap-2 hover:bg-gray-400 transition duration-700 rounded-md py-2 px-3 mb-3`} href={item.href} > {item.icon} {item.text} </Link>
                     )
                 })}
             </div>

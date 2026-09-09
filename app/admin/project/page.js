@@ -1,4 +1,6 @@
+
 import AddProjectNavigation from "@/app/_components/AddProjectNavigation"
+import DeleteProjBtn from "@/app/_components/DeleteProjBtn"
 import { Delete, Edit, PlusCircleIcon, PlusIcon } from "lucide-react"
 import Image from "next/image"
 const baseURL = process.env.NEXT_PUBLIC_BASE_URL
@@ -18,6 +20,9 @@ export default async function page() {
   }
 
   const projects = await getProject()
+
+
+  
 
   return (
     <div className="  p-10">
@@ -43,7 +48,7 @@ export default async function page() {
                     <Td data={project.title} />
                     <Td data={project.description.slice(0,50)+"...."} />
                     <Td data={<div className="flex gap-5">
-                      <Delete className="hover:scale-125 transition duration-500" />
+                      <DeleteProjBtn id={project._id} />
                       <Edit className="hover:scale-125 transition duration-500" />
                     </div>}/>
                   </tr>
