@@ -2,8 +2,10 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function ProjectCard({ title, description, previewImage, logo, githubUrl, liveUrl }) {
+  const router = useRouter()
   return (
     <div key={title} className=" p-5 rounded-2xl grid gap-4 hover:bg-gray-300 hover:-translate-y-2 transition duration-1000 border shadow-2xl">
         <div>
@@ -19,11 +21,11 @@ export default function ProjectCard({ title, description, previewImage, logo, gi
                     <div className="w-3 h-3 bg-blue-700 rounded-full"></div>
                     Live
                 </div>
-                <FontAwesomeIcon icon={faGithub} className="w-30 h-30 hover:-translate-y-1 transition" />
-                <ArrowUpRight className="hover:-translate-y-1 transition"  />
+                <a href={githubUrl}><FontAwesomeIcon icon={faGithub} className="w-30 h-30 hover:-translate-y-1 transition" /></a>
+                <a href={liveUrl}><ArrowUpRight className="hover:-translate-y-1 transition"  /></a>
            </div>
         </div>
-        <p className="text-center text-gray-500">{description}</p>
+        <p className="text-center text-gray-500 w-full wrap-anywhere">{description}</p>
     </div>
   )
 }

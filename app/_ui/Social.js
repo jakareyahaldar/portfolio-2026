@@ -36,7 +36,7 @@ export default function Social() {
       {
         social_links.map(({name, icon, css, link})=>{
           return(
-             <a key={name} href={link} title={name} target="_blank" className={`w-15 h-15 flex justify-center items-center text-4xl rounded-full border border-dashed bg-black absolute ${css} -translate-1/2 shadow-amber-200 hover:shadow-2xl transition hover:scale-125`}> <FontAwesomeIcon icon={icon} /> </a>
+             <a key={name} href={link} title={name} target="_blank" className={`w-15 h-15 flex justify-center items-center text-4xl rounded-full border border-dashed bg-black absolute ${css} -translate-1/2 shadow-amber-200 hover:shadow-2xl transition hover:scale-125 text-white`}> <FontAwesomeIcon icon={icon} /> </a>
           )
         })
       }

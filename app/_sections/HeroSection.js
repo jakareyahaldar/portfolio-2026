@@ -41,7 +41,7 @@ export default function HeroSection() {
         <div className="grid md:grid-cols-2 h-full">
           <div className="pl-5 pt-20 md:pt-25 relative">
             <h1 className={`${frijole.className} font-bold md:text-[90px] 2xl:text-[150px] text-4xl `}>Jakareya<span className="text-blue-600  ">.dev</span></h1>
-            <h3 ref={el} className="font-bold md:text-4xl text-2xl absolute mt-10"></h3>
+            <h3 className="font-bold md:text-4xl text-2xl absolute mt-10"><span  ref={el}></span></h3>
             <p className=" relative top-30 md:text-lg 2xl:text-2xl opacity-90 ">
               I  am an web devoloper around 3+ years, MERN, FULL stack Devoloper.<br/> i am provide web devolopment and any kinds of web work. 
             </p>
