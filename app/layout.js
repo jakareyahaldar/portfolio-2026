@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
           <div>
             <PathChangeAnimation />
             <Navbar />
-            {/* <MouseEffect /> */}
+            <MouseEffect />
             {children}
           </div>
         </Providers>

@@ -1,22 +1,24 @@
 "use client"
 
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { gsap } from "gsap"
+import { useGSAP } from '@gsap/react'
 
 export default function MouseEffect() {
-    
+
   const pointerEl = useRef(0)
 
-    useEffect(()=>{
-      gsap.to("pointerEl.current", { x: -100 })
-        window.addEventListener("mousemove",(e)=>{
-            gsap.to("#pointer", { x: e.x-17, y: e.y-17, opacity: 1 })
-        })
-        window.addEventListener("click",(e)=>{
-            gsap.to("#pointer", { scale: 1.5 })
-            setTimeout(()=>{ gsap.to("#pointer", { scale: 1 }) },200)
-        })
-    },[])
+  useGSAP(() => {
+    gsap.to(pointerEl.current, { x: -100 })
+    window.addEventListener("mousemove", (e) => {
+      gsap.to(pointerEl.current, { x: e.x - 17, y: e.y - 17, opacity: 1 })
+    })
+    window.addEventListener("click", (e) => {
+      gsap.to(pointerEl.current, { scale: 1.5 })
+      setTimeout(() => { gsap.to(pointerEl.current, { scale: 1 }) }, 200)
+    })
+  })
+
 
   return (
     <div
