@@ -1,5 +1,3 @@
-"use client"
-
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ArrowUpRight } from "lucide-react";
