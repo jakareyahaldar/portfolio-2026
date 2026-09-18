@@ -75,9 +75,11 @@ export default function Navbar() {
         </nav>
         <div className="flex gap-5 items-center">
           <DayLightToggler />
-          <button className="flex gap-1 px-2 py-1 border border-blue-700 rounded-md hover:bg-blue-400 transition duration-700">
+          <a target="_blank" href="https://drive.google.com/file/d/1IDFWRR4jX3P3w8amhz3zHeoiIdtVny_I/view?usp=sharing">
+            <button className="flex gap-1 px-2 py-1 border border-blue-700 rounded-md hover:bg-blue-400 transition duration-700">
             Resume <Download />
           </button>
+          </a>
           <MenuIcon onClick={toggle} className="md:hidden" />
         </div>
       </div>
