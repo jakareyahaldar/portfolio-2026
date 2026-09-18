@@ -37,7 +37,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="h-dvh w-dvw 2xl:pt-20 ">
+    <section className="h-dvh w-dvw 2xl:pt-20">
         <div className="grid md:grid-cols-2 h-full">
           <div className="pl-5 pt-20 md:pt-25 relative">
             <h1 className={`${frijole.className} font-bold md:text-[90px] 2xl:text-[150px] text-4xl `}>Jakareya<span className="text-blue-600  ">.dev</span></h1>

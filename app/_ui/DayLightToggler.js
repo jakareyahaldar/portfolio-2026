@@ -10,9 +10,9 @@ export default function DayLightToggler() {
         if(!window) return
         const root = document.documentElement
         if(isDay){
-            root.classList.add("light")
+            root.classList.add("dark")
         }else{
-            root.classList.remove("light")
+            root.classList.remove("dark")
         }
     },[isDay])
 

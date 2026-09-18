@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
     <html className="scroll-smooth" lang="en">
       <body className={`${fredoka.className} `}>
         <Providers>
-          <div>
+          <div className="dark:bg-indigo-950 dark:text-white">
             <PathChangeAnimation />
             <Navbar />
             <MouseEffect />
