@@ -27,12 +27,7 @@ const social_links = [
 
 export default function Social() {
   return (
-    <div className=" md:h-[400] md:w-[400] h-[200] w-[200] border border-dashed rounded-full relative mt-12 ">
-
-      <div className="h-full w-full rounded-full overflow-hidden">
-        <Image height={500} width={500} alt="contact_image" className="w-full h-full object-cover" src="/contact.png" />
-      </div>
-      
+    <div className=" md:h-[400] md:min-w-[400] h-[200] min-w-[200] border border-dashed rounded-full relative mt-12">      
       {
         social_links.map(({name, icon, css, link})=>{
           return(
