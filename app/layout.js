@@ -13,6 +13,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PathChangeAnimation from "./_layouts/PathChangeAnimation";
 import Providers from "./providers";
+import ChatWithMyAi from "./_components/ChatWithMyAi";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <div className="dark:bg-indigo-950 dark:text-white">
             <PathChangeAnimation />
+            <ChatWithMyAi />
             <Navbar />
             <MouseEffect />
             {children}
