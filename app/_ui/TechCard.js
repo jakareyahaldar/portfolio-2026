@@ -14,7 +14,7 @@ export default function TechCard({title,items}) {
                     return(
                         <div key={item.title} className=" flex flex-col justify-center items-center gap-5 hover:scale-110 transition">
                             <Image className="w-[30] md:w-[50]" src={item.image} height={50} width={50} alt="Html" />
-                            <p>{item.title}</p>
+                            <p className="text-sm 2xl:text-base">{item.title}</p>
                         </div>
                     )
                 })
