@@ -3,6 +3,8 @@
 import { MessageCircle, X, Send, Loader2, Bot, User } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
 
+const BaseUrl = process.env.NEXT_PUBLIC_BASE_URL
+
 export default function ChatWithMyAi() {
   const [chatOpen, setChatOpen] = useState(false)
   const [input, setInput] = useState('')
@@ -10,19 +12,9 @@ export default function ChatWithMyAi() {
   const [messages, setMessages] = useState([
     {
       id: '1',
-      text: "Hi there! I'm an AI assistant. Ask me anything about my skills, experience, or projects!",
+      text: "Hi there! I'm Jakareya Haldar. Ask me anything about my skills, experience, or projects!",
       sender: 'agent',
-    },
-    {
-      id: '2',
-      text: "What stack do you specialize in?",
-      sender: 'user',
-    },
-    {
-      id: '3',
-      text: "I specialize in the MERN stack, Next.js, React, Tailwind CSS, and Node.js!",
-      sender: 'agent',
-    },
+    }
   ])
 
   const chatContainerRef = useRef(null)
@@ -34,29 +26,61 @@ export default function ChatWithMyAi() {
     }
   }, [messages, isLoading])
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (!input.trim() || isLoading) return
+
+    const requestUrl = BaseUrl+"/api/ask"
+    
+    setIsLoading(true)
 
     const userMessage = {
       id: Date.now().toString(),
       text: input,
       sender: 'user',
     }
-
     setMessages((prev) => [...prev, userMessage])
     setInput('')
-    setIsLoading(true)
+
+    const messagesForAgent  =  [...messages, userMessage].map((message)=>{
+      return {
+        role: message.sender === "agent" ? "assistant" : "user",
+        content: message.text
+      }
+    })
+
+    /// requesting for reply
+    const req = await fetch(requestUrl,{
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(messagesForAgent)
+    })
+    const res = await req.json()
+
+    if(req.ok){
+      console.log(res)
+      setMessages((prev) => [...prev, {
+        id: (Date.now() + 1).toString(),
+        text: res.message,
+        sender: 'agent',
+      }])
+    }else(
+      alert("Faild")
+    )
+     setIsLoading(false)
+
 
     // Simulate AI response after delay
-    setTimeout(() => {
-      const agentResponse = {
-        id: (Date.now() + 1).toString(),
-        text: "Thanks for reaching out! This is a dummy automated response.",
-        sender: 'agent',
-      }
-      setMessages((prev) => [...prev, agentResponse])
-      setIsLoading(false)
-    }, 1500)
+    // setTimeout(() => {
+    //   const agentResponse = {
+    //     id: (Date.now() + 1).toString(),
+    //     text: "Thanks for reaching out! This is a dummy automated response.",
+    //     sender: 'agent',
+    //   }
+    //   setMessages((prev) => [...prev, agentResponse])
+    //   setIsLoading(false)
+    // }, 1500)
   }
 
   const handleKeyDown = (e) => {
@@ -95,7 +119,7 @@ export default function ChatWithMyAi() {
       {/* Messages Scrollable Area */}
       <div 
         ref={chatContainerRef}
-        className="flex-1 overflow-y-auto p-4 space-y-3 scroll-smooth text-sm"
+        className="flex-1 overflow-y-auto scrollbar-none p-4 space-y-3 scroll-smooth text-sm"
       >
         {messages.map((msg) => (
           <div
