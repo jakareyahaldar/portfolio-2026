@@ -18,12 +18,12 @@ export default function AboutMe() {
                     <h3 className="text-3xl">Hey there! 👋🏻</h3>
                     <p className=" text-xl">
                         Hey there! 👋🏻 I'm Chirag. I build things on the internet — with a strong focus on performance, interactivity, and getting the details right.
-<br/><br/>
-                        I enjoy working on systems that aren’t static. Real-time updates, complex UIs, and applications with lots of moving parts. I naturally go deeper into problems — optimizing, refining, and chasing that "this feels right" moment.
-<br/><br/>
-                        I like pushing systems to their limits, understanding how they behave, and improving them to be faster, cleaner, and more reliable.
-<br/><br/>
-                        If you're building something interesting, challenging, or technically demanding… I’d love to be part of it 😄
+
+I enjoy working on systems that aren’t static. Real-time updates, complex UIs, and applications with lots of moving parts. I naturally go deeper into problems — optimizing, refining, and chasing that "this feels right" moment.
+
+I like pushing systems to their limits, understanding how they behave, and improving them to be faster, cleaner, and more reliable.
+
+If you're building something interesting, challenging, or technically demanding… I’d love to be part of it 😄
                     </p>
                 </div>
             </div>
