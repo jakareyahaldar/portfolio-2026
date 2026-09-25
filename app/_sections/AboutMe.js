@@ -17,13 +17,15 @@ export default function AboutMe() {
                 <div className="grid gap-5 text-center md:text-start mt-10 md:mt-0">
                     <h3 className="text-3xl">Hey there! 👋🏻</h3>
                     <p className=" text-xl">
-                        Hey there! 👋🏻 I'm Chirag. I build things on the internet — with a strong focus on performance, interactivity, and getting the details right.
+                        Hey, I’m Jakareya Haldar 👋🏻
 
-I enjoy working on systems that aren’t static. Real-time updates, complex UIs, and applications with lots of moving parts. I naturally go deeper into problems — optimizing, refining, and chasing that "this feels right" moment.
+I build high-performance, interactive web applications with a focus on speed, precision, and getting the details right.
+<br />
+I thrive on non-static systems—real-time updates, complex interfaces, and applications with lots of moving parts. I naturally dive deep into technical challenges: profiling performance, refining architecture, and chasing that moment where everything feels seamless and responsive.
+<br />
+Whether it’s optimizing bottlenecks or scaling real-time functionality, I love pushing systems to their limit to make them faster, cleaner, and more reliable.
 
-I like pushing systems to their limits, understanding how they behave, and improving them to be faster, cleaner, and more reliable.
-
-If you're building something interesting, challenging, or technically demanding… I’d love to be part of it 😄
+Building something complex or ambitious? Let’s connect.
                     </p>
                 </div>
             </div>
